@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <style>
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    input[type="number"] {
+      -moz-appearance: textfield;
+    }
+  </style>
+  <body class="h-screen bg-slate-900">
+    <nav class="bg-slate-800 h-14 p-7 flex items-center gap-3">
+      <img src="./img/logo.png" alt="logo" width="35" />
+      <h1 class="text-slate-100 font-bold text-xl">Olyzano University</h1>
+    </nav>
+    <div class="page flex items-center gap-1 text-slate-400 mt-5 px-10">
+      <a href="">Academic Dashboard</a>
+      <p>/</p>
+      <p class="text-slate-100">Academic Score</p>
+    </div>
+    <div>
+      <form class="form-card p-10 flex flex-col gap-5" action="result.php" method="post">
+        <div class="flex flex-col gap-3">
+          <label for="nim" class="text-slate-200">NIM</label>
+          <input type="number" placeholder="Enter student ID" class="h-10 border-2 pl-2 focus:outline-none rounded-md" name="nim" id="nim" />
+        </div>
+        <div class="flex flex-col gap-3">
+          <label for="name" class="text-slate-200">Nama</label>
+          <input type="text" placeholder="Enter student name" class="h-10 border-2 pl-2 focus:outline-none rounded-md" name="name" id="name" />
+        </div>
+        <div class="flex flex-col gap-3">
+          <label for="major" class="text-slate-200">Jurusan</label>
+          <input type="text" placeholder="Enter student major" class="h-10 border-2 pl-2 focus:outline-none rounded-md" name="major" id="major" />
+        </div>
+        <div class="flex flex-col gap-3">
+          <label for="score" class="text-slate-200">Nilai</label>
+          <input type="number" placeholder="score" class="h-10 border-2 pl-2 focus:outline-none rounded-md" name="score" id="score" />
+        </div>
+
+        <input type="submit" value="Send Data" class="w-full h-10 bg-sky-500 text-white rounded-md my-4 cursor-pointer" />
+      </form>
+    </div>
+
+    <footer>
+      <p class="text-slate-400 text-center mt-10">Copyright © 2024 Olyzano University</p>
+    </footer>
+  </body>
+</html>
