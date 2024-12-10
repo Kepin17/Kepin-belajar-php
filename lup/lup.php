@@ -1,11 +1,18 @@
   <?php 
-  for ($i=$_POST['angka1'];$i<=$_POST['angka2'];$i++){
+  echo "Bilangan Genap : ";
+  for ($i=$_POST['angka1'];$i>=$_POST['angka2'];$i--){
 
+    if($i%2 ==0){
+      echo "$i,";
+    }
+  }
+  
 
-    if($i%2==0){
-      echo "$i = genap<br>";
-    }else {
-      echo "$i = ganjil<br>";
+  echo "<br>Bilangan Ganjil : ";
+  for ($i=$_POST['angka1'];$i>=$_POST['angka2'];$i--){
+
+    if($i%2 !=0){
+      echo "$i,";
     }
   }
   ?>
