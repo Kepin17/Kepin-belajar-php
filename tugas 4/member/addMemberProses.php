@@ -3,7 +3,7 @@ include "../config/koneksi.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get form data
-    $member_id = $_POST['id'];
+    $member_id = $_POST['member_id'];
     $member_name = $_POST['nama'];
     $alamat = $_POST['alamat'];
     $telepon = $_POST['phone'];
@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
 
-    $check_query = "SELECT id FROM member WHERE id = '$member_id'";
+    $check_query = "SELECT member_id FROM member WHERE member_id = '$member_id'";
     $result = mysqli_query($conn, $check_query);
     
     if (mysqli_num_rows($result) > 0) {

@@ -2,11 +2,11 @@
 include "../config/koneksi.php";
 
 // Generate new supplier ID
-$query = mysqli_query($conn, "SELECT id FROM member ORDER BY id DESC LIMIT 1");
+$query = mysqli_query($conn, "SELECT member_id FROM member ORDER BY member_id DESC LIMIT 1");
 $data = mysqli_fetch_array($query);
 
 if($data) {
-    $lastId = substr($data['id'], 2);
+    $lastId = substr($data['member_id'], 2);
     $nextId = intval($lastId) + 1;
     $newSupplierId = 'MB' . str_pad($nextId, 3, '0', STR_PAD_LEFT);
 } else {
@@ -23,7 +23,7 @@ if($data) {
                 <form action="addMemberProses.php" method="post">
                     <div class="mb-4">
                         <label for="supplier_id" class="block text-gray-700 text-sm font-bold mb-2">Member ID</label>
-                        <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="id" name="id" value="<?php echo $newSupplierId; ?>" readonly>
+                        <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="id" name="member_id" value="<?php echo $newSupplierId; ?>" readonly>
                     </div>
                     <div class="mb-4">
                         <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Nama Member</label>
